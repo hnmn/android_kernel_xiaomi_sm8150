@@ -46,7 +46,7 @@ KERNELSU_LINK="$KERNEL_DIR/drivers/kernelsu"
 
 if [ -d "$KERNELSU_SOURCE" ]; then
     echo "Creating symbolic link from $KERNELSU_SOURCE to $KERNELSU_LINK"
-    ln -sfn "$KERNELSU_SOURCE" "$KERNELSU_LINK"
+    cp -r "$KERNELSU_SOURCE" "$KERNELSU_LINK"
     echo "Symbolic link created."
 else
     echo "Source directory $KERNELSU_SOURCE does not exist. Cannot create symbolic link."
