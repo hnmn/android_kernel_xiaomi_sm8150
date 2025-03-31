@@ -12,7 +12,7 @@ on:
 
 jobs:
   create-tag:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
@@ -24,7 +24,7 @@ jobs:
         git push origin "v${{ github.event.inputs.version }}" || echo "Tag push failed (possibly already exists)."
   build:
     needs: create-tag
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         target: [Vayu, NetHunter]
@@ -93,7 +93,7 @@ jobs:
           /tmp/s/*.zip
   release:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - name: Download Build Artifacts
       uses: actions/download-artifact@v4
