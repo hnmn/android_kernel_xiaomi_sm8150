@@ -69,7 +69,7 @@ fi
 
 # Handle DEFCONFIG argument
 if [ "$(echo "$1" | tr '[:upper:]' '[:lower:]')" == "nethunter" ]; then
-    DEFCONFIG="nethunter_defconfig"
+    DEFCONFIG="dnethunter_defconfig"
     ZIP_PREFIX="NetHunter"
 elif [ "$(echo "$1" | tr '[:upper:]' '[:lower:]')" == "vayu" ]; then
     DEFCONFIG="vayu_user_defconfig"
